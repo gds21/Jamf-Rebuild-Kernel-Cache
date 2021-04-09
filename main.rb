@@ -12,7 +12,7 @@ puts "Enter Your Jamf Cloud Username."
 @username = gets.strip
 puts "Enter Your Jamf Cloud Password."
 @password = gets.strip
-#puts "Enter Computer Serial Number"
+puts "Enter Computer Serial Number"
 @computer_serial_number = gets.strip
 
 # /uapi/auth/tokens (POST )
