@@ -40,7 +40,7 @@ rescue StandardError => e
 	puts "HTTP Request failed (#{e.message})"
 end
 
-def fetch_computers(current_page=1)
+def fetch_computers(current_page=0)
 	page_size = 100
 	uri = URI("https://#{@instance_name}.jamfcloud.com/api/preview/computers?page=#{current_page}&page-size=#{page_size}")
 	puts uri
@@ -66,7 +66,7 @@ def fetch_computers(current_page=1)
 			add_row(serial_number, management_id)
 		end
 	}
-	if current_page < max_page
+	if current_page < max_page -1
 		fetch_computers(current_page+1)
 	end
 rescue StandardError => e
